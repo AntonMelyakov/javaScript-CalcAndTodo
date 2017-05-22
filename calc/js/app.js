@@ -2,7 +2,6 @@
     let $parent = document.querySelector('#calculator');
     let $result = $parent.querySelector('#result');
     let $operator = '';
-    //let stack = [];
 
     let firstNumber = 0;
     let secondNumber = 0;
@@ -44,8 +43,7 @@ console.log(type);
                 dble = eval(val / divisor);
                 divisor += '0';
                 firstNumber = firstNumber + dble;
-            }
-            
+            }           
         }
 
         else {
@@ -58,14 +56,11 @@ console.log(type);
                 divisor += '0';
                 secondNumber = secondNumber + dble;
             }
-
         }
-
     }
 
     function addPeriod() {
         isInt = false; //not Int 
-
     }
 
     function addOperator(operatorValue) {
@@ -87,12 +82,10 @@ console.log(type);
        
 
         else if (!isFirst && operatorValue === '=') { //normal
-
             calculation();
             isFirst = true;
             isInt = true;
             divisor = '10';
-
         }
 
         else {  //if isFirst = false and operator is not '=' 
@@ -100,11 +93,7 @@ console.log(type);
             $operator = operatorValue;
             isInt = true;
             divisor = '10';
-
         }
-
-
-
     }
 
     function addDelete() {
@@ -113,8 +102,7 @@ console.log(type);
         isFirst = true;
         $operator = '';
         isInt = true;
-        divisor = '10';
-           
+        divisor = '10';           
     };
 
     function calculation() {
@@ -156,7 +144,6 @@ console.log(type);
 
         else {
             $result.textContent = secondNumber;
-        }
-        
+        }      
     }
 })();
